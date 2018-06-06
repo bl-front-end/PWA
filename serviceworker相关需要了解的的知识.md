@@ -40,7 +40,6 @@ Service Worker除了可以缓存和离线开发，其可以应用的场景还有
  - 性能增强，比如预取用户可能需要的资源，比如相册中的后面数张图片
 
 
-
 ## ServiceWorkers/WebWorkers/WebSockets的区别 ##
 Service worker非常适合创建一个优秀的离线web app。当你可以的时候，它们让你与服务器交互(从服务器获取新数据，或者将更新的信息推回到服务器)，这样你的应用程序就可以工作，而不管你的用户的连接情况如何。
 
@@ -49,6 +48,19 @@ Web Workers对于任何具有强大功能的Web app来说都是非常完美的�
 WebSockets客户端和服务器之间有一个持久的连接，并且双方可以在任何时候开始发送数据。WebSockets对任何需要经常与服务器进行通信、并且可以从服务器能够直接与客户沟通的web app来说是非常完美的。
 
 
-
 ## service work 进阶 ##
 https://blog.csdn.net/i10630226/article/details/78885664
+
+## 基于Service Worker的XSS可能带来的问题： ##
+
+XSS持久化
+
+新型Flash攻击
+
+SW缓存劫持
+
+如何进行防御：
+
+治病需治根：防范XSS
+
+拒绝非SW Script（比如jsonp，文件上传功能）对Service-Worker:script的请求
